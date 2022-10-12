@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel = 'stylesheet' href = '/style.css'>
+</head>
+<body>
+
+    <div>
+        {{#if message}}
+        <h4>{{message}}</h4>
+        {{/if}}
+    </div>
+
+    <h1>Your Profile</h1>
+
+    <h3>Hello {{#if name}}{{name}}{{/if}}</h3>
+
+
+    <a href = '/settings'>Settings</a>
+
+    <form method="post" action = '/message/direct'>
+        <input id="receiving" placeholder="Receiving Email" name = 'receiving'>
+        <input id="messageInput" placeholder="Type Message" name = 'message'>
+        <button type = 'submit'>Send Message</button>
+    </form>
+
+    <div>
+        <h3>Messages:</h3>
+        {{#if messages}}
+        <h4>{{messages}}</h4>
+        {{/if}}
+    </div>
+
+</body>
+</html>
